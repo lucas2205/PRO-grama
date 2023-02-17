@@ -15,10 +15,12 @@ public class CoursesApplication {
 
 	@Bean
 	public WebMvcConfigurer corsConfiguration(){
-		return new WebMvcConfigurer() {
+		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/*").allowedOrigins("*");
+				registry.addMapping("/**").allowedOrigins("*")
+						.allowedHeaders("Authorization", "Cache-Control", "Content-Type","api_key")
+						.allowedMethods("GET", "POST", "PUT", "DELETE", "PUT","OPTIONS","PATCH", "DELETE");
 			}
 		};
 	}
