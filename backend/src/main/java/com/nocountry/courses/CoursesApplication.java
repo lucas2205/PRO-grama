@@ -15,7 +15,7 @@ public class CoursesApplication {
 
 	@Bean
 	public WebMvcConfigurer corsConfiguration(){
-		return new WebMvcConfigurerAdapter() {
+		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**").allowedOrigins("*")
