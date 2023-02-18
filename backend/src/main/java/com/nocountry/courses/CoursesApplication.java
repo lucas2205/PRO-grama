@@ -13,16 +13,4 @@ public class CoursesApplication {
 		SpringApplication.run(CoursesApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfiguration(){
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("*")
-						.allowedHeaders("Authorization", "Cache-Control", "Content-Type","api_key")
-						.allowedMethods("GET", "POST", "PUT", "DELETE", "PUT","OPTIONS","PATCH", "DELETE");
-			}
-		};
-	}
-
 }
