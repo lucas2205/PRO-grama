@@ -17,6 +17,10 @@ public record LessonController(ILessonService service) {
         return ResponseBuilder.responseBuilder(HttpStatus.OK,service.findAll());
     }
 
+    @GetMapping("/course/{id}")
+    public ResponseEntity<?> getAllByCourse(@PathVariable Long id){
+        return ResponseBuilder.responseBuilder(HttpStatus.OK,service.findAllByCourse(id));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id){
         return ResponseBuilder.responseBuilder(HttpStatus.OK,service.findById(id));

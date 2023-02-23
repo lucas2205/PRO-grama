@@ -44,6 +44,14 @@ public class LessonServiceImpl implements ILessonService {
     public List<LessonResponseDto> findAll() {
         return mapper.mapAll(lessonRepository.findAll(),LessonResponseDto.class);
     }
+    @Override
+    public List<LessonResponseDto> findAllByCourse(Long id) {
+
+        
+        return mapper.mapAll(lessonRepository.findAllByCourse_Id(id)
+                .orElseThrow(() -> new ResourceNotFoundException(messenger.getMessage(RESOURCE_NOT_FOUND.name(),
+                        new Object[] {Lesson.class.getName(), id }, Locale.getDefault()))), LessonResponseDto.class);
+    }
 
     @Override
     public LessonResponseDto findById(Long id) {
