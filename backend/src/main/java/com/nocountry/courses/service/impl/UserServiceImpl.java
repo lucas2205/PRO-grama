@@ -79,7 +79,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public List<BasicCourseResponseDto> addFavouriteCourseToUser(Long user_id, Long course_id) {
-        User user = findById(user_id);
+      /*  User user = findById(user_id);
         Course course =  courseRepository.findById(course_id).get();
         user.getIdCourses().add(course.getId());
         userRepository.save(user);
@@ -87,6 +87,7 @@ public class UserServiceImpl implements IUserService {
         return courseRepository.findAllById(user.getIdCourses())
                 .stream()
                 .map(courseStream -> new BasicCourseResponseDto(courseStream.getTitle()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
+        return null;
     }
 }
