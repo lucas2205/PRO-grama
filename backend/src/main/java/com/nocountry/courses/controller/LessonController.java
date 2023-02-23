@@ -26,9 +26,9 @@ public record LessonController(ILessonService service) {
         return ResponseBuilder.responseBuilder(HttpStatus.OK,service.findById(id));
     }
 
-    @PostMapping("/{lessonId}/user/{userId}")
-    public ResponseEntity<?> addLessonToUser(@PathVariable Long userId,@PathVariable Long lessonId){
-        return ResponseBuilder.responseBuilder(HttpStatus.OK,service.addLessonToUser(userId,lessonId));
+    @PostMapping("/{lessonId}")
+    public ResponseEntity<?> addLessonToUser(@PathVariable Long lessonId){
+        return ResponseBuilder.responseBuilder(HttpStatus.OK,service.addLessonToUser(lessonId));
     }
 
     @PutMapping("/status")
