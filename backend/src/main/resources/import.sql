@@ -1,8 +1,6 @@
 
 --#COURSE TABLE
-SET `railway`.`lessons` utf8;
-SET `railway`.`courses` utf8;
-
+SET NAMES utf8;
 
 
 --#LESSON TABLE
