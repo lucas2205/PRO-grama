@@ -3,7 +3,6 @@ package com.nocountry.courses.security.config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -27,8 +26,8 @@ public class SecurityConfiguration {
     private static final String[] AUTH_WHITELIST = {
             "/auth/**",
             "/authenticate",
-            "/user/get-all",
-            "/user/get-by-id/{id}",
+            "/user/**",
+            "/note/**",
             "/swagger-resources/**",
             "/swagger-ui/**",
             "/api-docs/**",
